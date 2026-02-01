@@ -133,6 +133,7 @@ class FAISSVectorStore(VectorStore):
     def _normalize(self, embedding: list[float]) -> Any:
         """Normalize embedding for cosine similarity."""
         import numpy as np
+        import faiss
         arr = np.array(embedding, dtype=np.float32).reshape(1, -1)
         faiss.normalize_L2(arr)
         return arr

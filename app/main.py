@@ -295,13 +295,16 @@ class ContextAwareChatbot:
             await self._long_term_memory.save(self.settings.long_term_memory_path)
             logger.info("Long-term memory saved")
 
-    async def store_summary_to_long_term(self) -> None:
+    async def store_summary_to_long_term(self, force: bool = False) -> None:
         """Store current conversation summary to long-term memory."""
-        if not self._short_term_memory.has_summary:
+        if not self._short_term_memory.has_summary and not force:
             return
 
         # Get messages and create summary for storage
         messages = self._short_term_memory.get_context_messages()
+        if not messages:
+            return
+
         summary_data = await self._summarizer.summarize_for_storage(messages)
 
         await self._long_term_memory.store(
@@ -353,6 +356,7 @@ async def main():
 
             if user_input.lower() == "quit":
                 print("Saving memory and exiting...")
+                await chatbot.store_summary_to_long_term(force=True)
                 await chatbot.save_memory()
                 break
 

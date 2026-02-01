@@ -1,6 +1,7 @@
 # User specified
 .env
 .claude/
+.agent/
 
 # Python
 __pycache__/

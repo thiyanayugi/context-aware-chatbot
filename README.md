@@ -1,4 +1,4 @@
-# Context-Aware Chatbot
+# Context-Window-Aware Chatbot
 
 ![Context-Aware Chatbot Hero](assets/hero.png)
 

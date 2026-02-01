@@ -30,10 +30,10 @@ class Settings(BaseSettings):
     """Application settings loaded from environment."""
 
     # LLM Configuration
-    llm_provider: LLMProvider = Field(default=LLMProvider.OPENAI)
+    llm_provider: LLMProvider = Field(default=LLMProvider.ANTHROPIC)
     openai_api_key: Optional[str] = Field(default=None, alias="OPENAI_API_KEY")
     anthropic_api_key: Optional[str] = Field(default=None, alias="ANTHROPIC_API_KEY")
-    llm_model: str = Field(default="gpt-4o-mini")
+    llm_model: str = Field(default="claude-3-haiku-20240307")
     llm_max_tokens: int = Field(default=1000)
     llm_temperature: float = Field(default=0.7)
 

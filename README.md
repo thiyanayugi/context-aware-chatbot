@@ -1,15 +1,21 @@
 # Context-Aware Chatbot
 
+![Context-Aware Chatbot Hero](assets/hero.png)
+
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![License MIT](https://img.shields.io/badge/license-MIT-green.svg)
+![Status Active](https://img.shields.io/badge/status-active-success.svg)
+
 A production-style LLM chatbot with intelligent context window management, long-term memory, and safety guardrails.
 
 ## Features
 
-- **Token Tracking**: Monitors token usage for every LLM call
-- **Context Overflow Prevention**: Automatic summarization when approaching token limits
-- **Short-Term Memory**: Maintains conversation history with token-aware management
-- **Long-Term Memory**: Vector database for semantic retrieval of past conversations
-- **Guardrails**: Input filtering for prompt injection, output validation
-- **Multi-Provider**: Supports OpenAI and Anthropic LLMs
+- 🎫 **Token Tracking**: Monitors token usage for every LLM call
+- 🧠 **Context Overflow Prevention**: Automatic summarization when approaching token limits
+- 💭 **Short-Term Memory**: Maintains conversation history with token-aware management
+- 📚 **Long-Term Memory**: Vector database for semantic retrieval of past conversations
+- 🛡️ **Guardrails**: Input filtering for prompt injection, output validation
+- 🔌 **Multi-Provider**: Supports OpenAI and Anthropic LLMs
 
 ## Architecture
 

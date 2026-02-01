@@ -27,3 +27,11 @@ htmlcov/
 # System
 .DS_Store
 Thumbs.db
+# Temp Scripts
+check_score.py
+debug_retrieval.py
+verify_fix.py
+verify_summarization.py
+
+# Data
+data/memory/

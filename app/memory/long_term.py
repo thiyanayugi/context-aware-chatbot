@@ -53,6 +53,7 @@ class LongTermMemoryManager:
         self,
         embedding_provider: EmbeddingProvider,
         vector_store: VectorStore,
+        min_relevance_score: float = 0.5,
         session_id: Optional[str] = None
     ):
         """
@@ -65,6 +66,7 @@ class LongTermMemoryManager:
         """
         self.embedding_provider = embedding_provider
         self.vector_store = vector_store
+        self.min_relevance_score = min_relevance_score
         self.session_id = session_id or str(uuid.uuid4())
 
     async def store(
@@ -111,7 +113,7 @@ class LongTermMemoryManager:
         self,
         query: str,
         k: int = 3,
-        min_score: float = 0.5,
+        min_score: Optional[float] = None,
         include_current_session: bool = True
     ) -> list[Memory]:
         """
@@ -139,7 +141,8 @@ class LongTermMemoryManager:
         memories = []
         for result in results:
             # Skip low-relevance results
-            if result.score < min_score:
+            threshold = min_score if min_score is not None else self.min_relevance_score
+            if result.score < threshold:
                 continue
 
             # Skip current session if not wanted

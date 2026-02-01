@@ -115,7 +115,8 @@ class ContextAwareChatbot:
         # Initialize long-term memory
         self._long_term_memory = LongTermMemoryManager(
             embedding_provider=embedding_provider,
-            vector_store=vector_store
+            vector_store=vector_store,
+            min_relevance_score=self.settings.min_relevance_score
         )
 
         # Try to load existing memory

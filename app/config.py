@@ -50,7 +50,7 @@ class Settings(BaseSettings):
 
     # Memory Configuration
     long_term_memory_path: str = Field(default="./data/memory")
-    min_relevance_score: float = Field(default=0.5)
+    min_relevance_score: float = Field(default=0.3)
     max_retrieved_memories: int = Field(default=3)
 
     # Guardrails Configuration

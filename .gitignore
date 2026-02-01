@@ -35,3 +35,4 @@ verify_summarization.py
 
 # Data
 data/memory/
+/.claude

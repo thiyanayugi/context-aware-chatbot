@@ -1,5 +1,8 @@
 """
 Pytest configuration and shared fixtures.
+
+This module provides reusable test fixtures for the chatbot test suite.
+Fixtures include sample conversations, injection attempts, and async utilities.
 """
 
 import pytest
@@ -9,7 +12,12 @@ from typing import AsyncGenerator
 
 @pytest.fixture(scope="session")
 def event_loop():
-    """Create event loop for async tests."""
+    """
+    Create event loop for async tests.
+    
+    Scope: session - shared across all tests to avoid overhead.
+    This fixture is required for pytest-asyncio to work properly.
+    """
     loop = asyncio.new_event_loop()
     yield loop
     loop.close()
@@ -60,3 +68,20 @@ def safe_inputs() -> list[str]:
         "Please summarize this article for me",
         "I need help understanding machine learning",
     ]
+
+
+@pytest.fixture
+def mock_llm_responses() -> dict[str, str]:
+    """
+    Mock LLM responses for different conversation scenarios.
+    
+    Use these in tests to avoid making actual API calls and incurring costs.
+    Keys represent conversation contexts, values are canned responses.
+    """
+    return {
+        "greeting": "Hello! I'm here to help. What can I assist you with today?",
+        "summarization": "Here is a summary of our previous conversation: We discussed Python programming and best practices for error handling.",
+        "technical_help": "I can help you with that technical question. Let me break it down step by step.",
+        "clarification": "I'm not sure I understand. Could you please provide more details?",
+        "error": "I apologize, but I encountered an error. Please try rephrasing your question.",
+    }

@@ -1,75 +1,88 @@
-# User specified
-.env
-.claude/
-.agent/
+# ============================================
+# Context-Aware Chatbot - Git Ignore Rules
+# ============================================
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# Environment & Secrets
+# ---------------------
+.env                    # Main environment file (contains API keys!)
+.env.local              # Local overrides
+.env.*.local            # Environment-specific local configs
+
+# AI Assistant Tools
+# ------------------
+.claude/                # Claude Code workspace
+.agent/                 # Agent-specific data
+
+# Python Runtime
+# --------------
+__pycache__/            # Python bytecode cache
+*.pyc                   # Compiled Python files
+*.pyo                   # Optimized Python files
+*.pyd                   # Python dynamic modules
 .Python
-env/
-venv/
-.venv/
+env/                    # Virtual environment (generic)
+venv/                   # Virtual environment (standard name)
+.venv/                  # Virtual environment (hidden)
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
+# Testing & Coverage
+# ------------------
+.pytest_cache/          # Pytest cache directory
+.coverage               # Coverage.py data file
+htmlcov/                # HTML coverage reports
+.tox/                   # Tox testing environments
 
-# IDE
-.vscode/
-.idea/
+# Development Tools & IDEs
+# ------------------------
+.vscode/                # Visual Studio Code settings
+.idea/                  # PyCharm/IntelliJ settings
+*.swp                   # Vim swap files
+*.swo                   # Vim swap files
 
-# System
-.DS_Store
-Thumbs.db
-# Temp Scripts
-check_score.py
-debug_retrieval.py
-verify_fix.py
-verify_summarization.py
+# Project-Specific Data
+# ---------------------
+data/memory/            # Long-term conversation memory (potentially sensitive)
 
-# Data
-data/memory/
-/.claude
-# Build artifacts
-*.egg-info/
-dist/
-build/
-*.so
+# Build Artifacts
+# ---------------
+*.egg-info/             # Python package metadata
+dist/                   # Distribution packages
+build/                  # Build output
+*.so                    # Compiled extensions
 
-# Jupyter Notebooks
-.ipynb_checkpoints/
-*.ipynb
-
-# Environment files
-.env.local
-.env.*.local
+# Notebooks & Experiments
+# -----------------------
+.ipynb_checkpoints/     # Jupyter checkpoint files
+*.ipynb                 # Jupyter notebooks (exclude from repo)
 
 # Logs
-*.log
-logs/
+# ----
+*.log                   # All log files
+logs/                   # Log directory
 
-# Vector stores
-*.faiss
-*.index
+# ML/AI Artifacts
+# ---------------
+*.faiss                 # FAISS vector index files
+*.index                 # Generic index files
+.cache/                 # Cache directory
+models/                 # Downloaded model files
 
-# Model caches
-.cache/
-models/
-
+# Operating System Files
+# ----------------------
 # macOS
+.DS_Store               # macOS folder metadata
 .AppleDouble
 .LSOverride
+._*                     # macOS resource forks
 
 # Windows
-desktop.ini
-$RECYCLE.BIN/
+Thumbs.db               # Windows thumbnail cache
+desktop.ini             # Windows folder config
+$RECYCLE.BIN/           # Windows recycle bin
+*.lnk                   # Windows shortcuts
 
 # Linux
-*~
-.nfs*
+*~                      # Backup files
+.nfs*                   # NFS lock files
+.directory              # KDE directory config

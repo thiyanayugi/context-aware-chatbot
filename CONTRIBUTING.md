@@ -27,6 +27,26 @@ Thank you for considering contributing to this project! 🎉
    # Add your API keys to .env
    ```
 
+### Troubleshooting Setup Issues
+
+**Python version mismatch?**
+- Ensure you're using Python 3.10 or higher
+- Check version: `python --version`
+- Use pyenv for version management if needed
+
+**Module import errors?**
+- Verify virtual environment is activated
+- Reinstall dependencies: `pip install -r requirements.txt --force-reinstall`
+
+**API key not working?**
+- Ensure no extra spaces in `.env` file
+- Verify key format: OpenAI keys start with `sk-`, Anthropic with `sk-ant-`
+- Check key validity at provider dashboard
+
+**FAISS installation fails?**
+- On Apple Silicon: Use `pip install faiss-cpu --no-cache-dir`
+- On Linux: May need `apt-get install libgomp1`
+
 ## Code Style
 
 This project follows these conventions:

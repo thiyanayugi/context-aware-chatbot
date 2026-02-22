@@ -36,3 +36,40 @@ verify_summarization.py
 # Data
 data/memory/
 /.claude
+# Build artifacts
+*.egg-info/
+dist/
+build/
+*.so
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Environment files
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Vector stores
+*.faiss
+*.index
+
+# Model caches
+.cache/
+models/
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*

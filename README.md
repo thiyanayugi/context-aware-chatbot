@@ -19,6 +19,14 @@ A production-style LLM chatbot with intelligent context window management, long-
 
 ## Architecture
 
+
+## 📚 Documentation
+
+- **[Quick Start Guide](QUICKSTART.md)** - Get running in 5 minutes
+- **[Contributing Guidelines](CONTRIBUTING.md)** - How to contribute
+- **[Engineering Guidelines](skills.md)** - Development best practices
+- **[Troubleshooting](#troubleshooting)** - Common issues and solutions
+
 ```
 context-aware-chatbot/
 ├── app/

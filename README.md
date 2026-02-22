@@ -21,6 +21,23 @@ A production-style LLM chatbot with intelligent context window management, long-
 - 🛡️ **Guardrails**: Input filtering for prompt injection, output validation
 - 🔌 **Multi-Provider**: Supports OpenAI and Anthropic LLMs
 
+## Why This Project?
+
+Most LLM chatbot implementations hit token limits and crash, lose context abruptly, or fail to remember past conversations. This project solves those problems with production-ready patterns:
+
+**Use Cases:**
+- **Customer Support Bots**: Remember customer history across sessions
+- **Personal AI Assistants**: Maintain long-term preferences and context
+- **Research Tools**: Navigate large knowledge bases without forgetting
+- **Enterprise Chatbots**: Production-grade safety, logging, and monitoring
+- **LLM Application Templates**: Learn best practices for building robust AI systems
+
+**What Makes It Different:**
+- ✅ Actually handles token limits gracefully (not just "hope for the best")
+- ✅ Real long-term memory using semantic search (not just context stuffing)
+- ✅ Production-ready error handling and logging
+- ✅ Designed for real users, not just demos
+
 ## Architecture
 
 

@@ -207,3 +207,53 @@ pytest tests/ --cov=app --cov-report=html
 ## License
 
 MIT
+
+## Troubleshooting
+
+### Common Issues
+
+#### API Key Not Found
+```
+Error: No API key found for provider 'openai'
+```
+**Solution**: Create a `.env` file with your API key. Use `.env.example` as a template.
+
+#### Token Limit Exceeded
+```
+Error: Token count exceeded maximum context window
+```
+**Solution**: Lower `MAX_CONTEXT_TOKENS` in your `.env` file or enable automatic summarization.
+
+#### Vector Store Initialization Failed
+```
+Error: Cannot initialize FAISS vector store
+```
+**Solution**: Ensure the `data/` directory exists and is writable:
+```bash
+mkdir -p data
+chmod 755 data
+```
+
+#### Import Errors
+```
+ModuleNotFoundError: No module named 'app'
+```
+**Solution**: Run from project root and ensure dependencies are installed:
+```bash
+pip install -r requirements.txt
+python -m app.main
+```
+
+### Performance Tips
+
+- Use `gpt-4o-mini` or `claude-3-haiku` for faster responses
+- Reduce `MAX_CONTEXT_TOKENS` to decrease latency
+- Enable caching for embedding models
+- Pre-load vector store on startup
+
+### Getting Help
+
+- Check [Issues](https://github.com/thiyanayugi/context-aware-chatbot/issues)
+- Review [skills.md](skills.md) for engineering guidelines
+- Enable debug logging: `LOG_LEVEL=DEBUG` in `.env`
+

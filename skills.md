@@ -103,3 +103,25 @@ This document defines how we build AI systems in this project.
 - **Sanitize all inputs** before logging (no PII in logs)
 - **Rate limit** API endpoints to prevent abuse
 - **Validate file paths** if any file operations are used
+- **Never commit** `.env` files or credentials to version control
+- **Use secrets management** (e.g., AWS Secrets Manager) in production
+
+---
+
+## Version Control & Collaboration
+
+- **Write clear commit messages** following conventional commits format
+- **Keep commits atomic**: One logical change per commit
+- **Branch naming**: Use `feature/`, `fix/`, `docs/` prefixes
+- **Pull requests**: Require code review before merging to main
+- **Protect main branch**: No direct commits, only via PR
+
+---
+
+## Performance Optimization
+
+- **Cache embeddings** when possible to avoid recomputation
+- **Batch LLM requests** for multiple queries when feasible
+- **Use streaming** for long responses to improve perceived latency
+- **Profile token usage** to identify expensive operations
+- **Monitor API costs** regularly and set budget alerts

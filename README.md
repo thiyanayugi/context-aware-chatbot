@@ -3,6 +3,10 @@
 ![Context-Aware Chatbot Hero](assets/hero.png)
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
+
 ![License MIT](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status Active](https://img.shields.io/badge/status-active-success.svg)
 
